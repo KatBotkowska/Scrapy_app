@@ -40,8 +40,8 @@ class QuotesSpider(scrapy.Spider):
         loader = ItemLoader(item=quote_item, response=response)
         loader.add_css('author_name', '.author-title::text')
         loader.add_css('author_birthday', '.author-born-date::text')
-        #loader.add_css('author-bornlocation', '.author-born-location::text')
-        #loader.add_css('author-bio', 'author-description::text')
+        loader.add_css('author_bornlocation', '.author-born-location::text')
+        loader.add_css('author_bio', '.author-description::text')
         yield loader.load_item()
         #     {
         #     'author_name':response.css('.author-title::text').get(),
