@@ -13,9 +13,9 @@ class DuplicatesPipeline(object):
 
     def process_item(self, item, spider):
         session = self.Session()
-        exist_quote = session.query('Quote').filter_by(quote_content=item['quote_content']).first()
+        exist_quote = session.query(Quote).filter_by(quote_content=item['quote_content']).first()
         if exist_quote is not None:
-            raise DropItem(f"Duplicate item found: {item['quote_item']}")
+            raise DropItem(f"Duplicate item found: {item['quote_content']}")
             session.close()
         else:
             return item
