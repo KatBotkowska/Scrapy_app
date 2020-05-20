@@ -40,3 +40,7 @@ class Author(Base):
 
 class Tag(Base):
     __tablename__='tag'
+
+    id = Column(Integer, primary_key=True)
+    name = Column('name', String(30), unique=True)
+    quotes = relationship('Quote', secondary='quote_tag', lazy='dynamic', backref='tag' )
