@@ -5,6 +5,7 @@ from tutorial.models import Quote, Author, Tag, db_connect, create_table
 import logging
 
 
+# noinspection PyUnreachableCode
 class DuplicatesPipeline(object):
     def __init__(self):
         engine = db_connect()
