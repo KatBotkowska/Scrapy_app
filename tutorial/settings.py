@@ -65,7 +65,8 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'tutorial.pipelines.TutorialPipeline': 300,
+   'tutorial.pipelines.DuplicatesPipeline': 100,
+   'tutorial.pipelines.SaveQuotesPipeline': 200,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,3 +89,5 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+CONNECTION_STRING='sqlite:///scrapy_quotes.db'
