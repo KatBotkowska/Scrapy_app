@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 from scrapy.exceptions import DropItem
 from tutorial.models import Quote, Author, Tag, db_connect, create_table
